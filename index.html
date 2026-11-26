@@ -1154,7 +1154,6 @@ section.safety .zf i{flex:none;width:8px;height:8px;border-radius:50%;background
 .fbrand b{display:block;font-family:var(--d-display);font-weight:900;font-size:21px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink);line-height:1}
 .fbrand .serif{display:block;margin-top:4px;font-size:20px;color:var(--azure)}
 .fcol h4{font-family:var(--d-serif);font-weight:400;font-size:19px;color:var(--ink);margin-bottom:12px}
-.wa{transition:opacity .4s,transform .4s}.wa.off{opacity:0;pointer-events:none;transform:translateY(20px)}
 .fcol a{display:block;font-size:14px;color:#46607f;padding:4px 0;transition:color .25s,transform .25s;pointer-events:auto}
 .fcol a:hover{color:var(--azure);transform:translateX(4px)}
 .fbar{position:absolute;z-index:5;left:clamp(14px,2vw,30px);right:clamp(14px,2vw,30px);bottom:clamp(14px,2vw,28px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 14px 12px 26px;border-radius:99px;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:13px;color:#4a5f7d;box-shadow:0 14px 40px rgba(7,26,56,.25);pointer-events:auto}
@@ -1223,27 +1222,16 @@ section.safety .zf i{flex:none;width:8px;height:8px;border-radius:50%;background
 footer{margin-top:clamp(60px,8vw,110px);background:var(--ink);color:#b7c8e2;padding:30px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
-/* whatsapp */
-@keyframes ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.5);opacity:0}}
-
-
 #cur{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--flare);pointer-events:none;z-index:100;transition:width .3s,height .3s,margin .3s,opacity .3s;display:none;margin:-6px 0 0 -6px;opacity:.9}
 #cur.big{width:60px;height:60px;margin:-30px 0 0 -30px;opacity:.25}
 @media(hover:hover) and (pointer:fine){#cur{display:block}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.intro h2 .w{opacity:1}}
 .hero2{background:#dcecff!important}.hero2 .pstage{bottom:-3px}.intro{margin-top:-3px;z-index:2}.pin-spacer:has(>#hero){background:#dcecff}
 
-/* whatsapp v2 */
-.wa{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:12px;padding:7px 22px 7px 7px;border-radius:99px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);color:#0a1f3d;box-shadow:0 0 0 1px rgba(10,31,61,.06),0 18px 44px rgba(10,31,61,.2),0 6px 16px rgba(37,211,102,.18);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.wa:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(37,211,102,.35),0 26px 54px rgba(10,31,61,.24),0 10px 26px rgba(37,211,102,.32)}
-.wa i{width:50px;height:50px;border-radius:50%;background:linear-gradient(145deg,#3fe27f,#16b34f);display:grid;place-items:center;position:relative;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 14px rgba(22,179,79,.45)}
-.wa i::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ring 2.4s infinite}
-.wa i u{position:absolute;right:1px;top:1px;width:12px;height:12px;border-radius:50%;background:#7CFF9E;border:2.5px solid #fff;box-sizing:border-box}
-.wa b{display:flex;flex-direction:column;line-height:1.2;font-weight:700;font-size:14.5px;letter-spacing:-.005em}
-.wa b small{font-weight:500;font-size:12px;color:#5b6b85;letter-spacing:.02em;margin-top:2px}
-.wa:hover i{transform:rotate(-8deg) scale(1.06);transition:transform .35s}
-@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.55);opacity:0}}
-@media(max-width:560px){.wa b{display:none}.wa{padding:6px;right:14px;bottom:14px}}
+.wa-nav{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:50%;background:#20c768;color:#fff;transition:transform .25s,background .25s}
+.wa-nav:hover{transform:scale(1.08);background:#16b653}
+.wa-nav:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wa-nav svg{width:21px;height:21px}
 </style>
 </head>
 <body class="loading">
@@ -1261,6 +1249,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="links"><a href="#pathways" data-i="nav1">Pathways</a><a href="courses.html">Courses</a><a href="#tandem">Tandem</a><a href="#team">Instructors</a><a href="#safety">Safety</a><a href="#voices">Students</a><a href="#where">Find us</a></div>
   <div class="navr">
     <a class="btn fl mag" href="#tandem"><span data-i="enq">Enquire</span> <span class="ar">→</span></a>
+    <a class="wa-nav" href="https://wa.me/919955966881?text=Hi%20Sky%20Shark%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg></a>
   </div>
 </nav>
 
@@ -1509,8 +1498,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </section>
 </main>
 
-<a class="wa" href="https://wa.me/919955966881?text=Hi%20Sky%20Shark%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg><u></u></i><b><span data-i="wa">Chat on WhatsApp</span><small>+91 99559 66881</small></b></a>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
@@ -1559,8 +1546,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     gsap.utils.toArray('.sechead, .rn, .person, .gear div, .tcard, .final h2').forEach(function(el){gsap.from(el,{y:60,opacity:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 90%',once:true,refreshPriority:el.closest('.final')?-8:0}})});
 
     (function(){
-      (function(){var wa=document.querySelector('.wa'),card=document.querySelector('#final .fcard');if(!wa||!card||!('IntersectionObserver' in window))return;
-        new IntersectionObserver(function(es){var r=es[0].intersectionRect.height;wa.classList.toggle('off',r>innerHeight*.55)},{threshold:[0,.2,.4,.6,.8,1]}).observe(card)})();
       var sec=$('#final');if(!sec||innerWidth<=700)return;
       var stage=$('.fstage',sec),hero=$('.fhero',sec),hg=$('.hg',hero),hw=$('.hw',hero),pk=$('.pk',hero),ffly=$('.ffly',sec),herol=$('.fheroL',sec),padEl=$('.fpad',sec),near=$('.fsv-near',sec),o=$('.fcont h2 .o',sec);
       var card=$('.fcard',sec),sty=0;
